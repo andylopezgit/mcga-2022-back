@@ -10,6 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
+
 app.use(router);
 
 mongoose.connect('mongodb+srv://andy:universidad@clustermcga2022.rhpftgp.mongodb.net/?retryWrites=true&w=majority')
