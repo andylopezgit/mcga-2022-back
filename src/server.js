@@ -3,7 +3,7 @@ const { mongoose } = require("mongoose");
 const express = require("express");
 const router = require("./routes");
 
-const productsRouter = require("../src/routes/products");
+const productsRouter = require("../src/routes/index.js");
 
 const app = express();
 app.use(express.json());
