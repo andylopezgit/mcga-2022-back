@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(router);
 app.use("/", productsRouter);
 
-await mongoose
+mongoose
   .connect(url)
   .then(() => {
     app.listen({ port: 3000 });
