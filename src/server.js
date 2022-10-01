@@ -17,10 +17,8 @@ app.use("/", productsRouter);
 mongoose
   .connect(url)
   .then(() => {
+    app.listen({ port: 3000 });
     console.log("🟢 DB Connected");
-    app.listen({ port: 3000 }, () => {
-      //console.log(`🚗 Server running on port ${process.env.PORT}`);
-    });
   })
   .catch((err) => {
     console.log("🔴 There was an error on the DB connection method.");
