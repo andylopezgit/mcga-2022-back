@@ -1,9 +1,12 @@
 //const dotenv = require("dotenv").config();
-import mongoose from "mongoose";
+const { mongoose } = require("mongoose");
 const express = require("express");
 const router = require("./routes");
 
 const productsRouter = require("../src/routes/index.js");
+
+const url =
+  "mongodb+srv://andy:universidad@clustermcga2022.rhpftgp.mongodb.net/?retryWrites=true&w=majority";
 
 const app = express();
 app.use(express.json());
@@ -12,9 +15,7 @@ app.use(router);
 app.use("/", productsRouter);
 
 mongoose
-  .connect(
-    "mongodb+srv://andy:universidad@clustermcga2022.rhpftgp.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(url)
   .then(() => {
     console.log("🟢 DB Connected");
     app.listen({ port: 3000 }, () => {
