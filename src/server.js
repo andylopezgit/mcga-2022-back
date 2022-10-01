@@ -1,5 +1,5 @@
 //const dotenv = require("dotenv").config();
-const { mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
 const router = require("./routes");
 
@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(router);
 app.use("/", productsRouter);
 
-mongoose
+await mongoose
   .connect(url)
   .then(() => {
     app.listen({ port: 3000 });
