@@ -14,13 +14,17 @@ app.use(express.static("public"));
 app.use(router);
 app.use("/", productsRouter);
 
-mongoose
-  .connect(url)
-  .then(() => {
-    app.listen({ port: 3000 });
-    console.log("🟢 DB Connected");
-  })
-  .catch((err) => {
-    console.log("🔴 There was an error on the DB connection method.");
-    console.log(err);
-  });
+main().catch((err) => console.log(err));
+
+async function main() {
+  await mongoose
+    .connect(url)
+    .then(() => {
+      app.listen({ port: 3000 });
+      console.log("🟢 DB Connected");
+    })
+    .catch((err) => {
+      console.log("🔴 There was an error on the DB connection method.");
+      console.log(err);
+    });
+}
