@@ -16,8 +16,8 @@ const validateString = [
     .exists()
     .withMessage("El stock debe ser un numero"),
   check("description")
-    .isString()
     .exists()
+    .isString()
     .isLength({ min: 3 })
     .withMessage("la descripcion debe ser mayor a 3 letras y es obligatoria"),
   (req, res, next) => {
