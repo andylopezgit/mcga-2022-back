@@ -11,6 +11,15 @@ const validateString = [
     .isNumeric()
     .exists()
     .withMessage("El precio debe ser un numero"),
+  check("stock")
+    .isNumeric()
+    .exists()
+    .withMessage("El stock debe ser un numero"),
+  check("description")
+    .isString()
+    .exists()
+    .isLength({ min: 3 })
+    .withMessage("la descripcion debe ser mayor a 3 letras y es obligatoria"),
   (req, res, next) => {
     validateResult(req, res, next);
   },
