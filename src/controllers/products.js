@@ -32,11 +32,24 @@ const deleteProductById = (req, res) => {
 };
 
 const updateProduct = (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   const product = req.body;
-  Products.findOneAndUpdate({ _id: id }, { ...product })
-    .then()
-    .catch();
+  Products.findOneAndUpdate({ _id: id }, { ...product }, { new: true })
+    .then((data) => {
+      if (data.length === 0)
+        return res.status(404).json({
+          msg: `Product not found by id: ${id}`,
+        });
+      return res.json({
+        msg: "Product updated",
+        data,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        msg: `Error: ${error}`,
+      });
+    });
 };
 
 module.exports = {
