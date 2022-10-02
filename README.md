@@ -25,7 +25,7 @@ Materia MCGA - Carrera Ing. en Sistemas de Informacion
 
 # :red_car: Deploy
 
-* BACKEND : https://vercel.com/andylopezgit/mcga-2022-backend
+* BACKEND : https://mcga-2022-backend.vercel.app/
 * BASE DE DATOS: https://cloud.mongodb.com/
 
 
