@@ -1,12 +1,16 @@
-# mcga-2022-back ✔
+# Andrés López ✔
 
-Materia MCGA - Carrera Ing. en Sistemas de Informacion 
+Materia: MCGA - Carrera: Ingeniería. en Sistemas de Información 
 
 * :argentina: Andres Lopez [LinkedIn](https://www.linkedin.com/in/andresl%C3%B3pez/) - [GitHub](https://github.com/andylopezgit)
 
-# :articulated_lorry: Proyecto
+# :articulated_lorry: Proyecto Parcial 1 - Backend
 
-
+<a href="https://github.com/topics/node" target="_blank"><img align="center" alt="Made With NODE"  src="https://img.shields.io/badge/node-v16.17.0-LTS"></a>
+<a href="https://github.com/topics/mongoose" target="_blank"><img align="center" alt="Made With Mongoose"  src="https://img.shields.io/badge/mongoose-v6.6.3-orange"></a>
+<a href="https://github.com/topics/express" target="_blank"><img align="center" alt="Made With Mongoose"  src="https://img.shields.io/badge/express-v4.18.1-yellow"></a>
+<a href="https://github.com/topics/express-validator" target="_blank"><img align="center" alt="Made With Mongoose"  src="https://img.shields.io/badge/express%20validator-v6.14.2-red"></a>
+<a href="https://documenter.getpostman.com/view/23097436/2s7YYr8jY4" target="_blank"><img align="center" alt="POSTMAN DOC"  src="https://img.shields.io/badge/Postman-ApiDoc-orange"></a>
 # :truck: Tecnologías Utilizadas  
 
 <p align="center">
@@ -14,7 +18,7 @@ Materia MCGA - Carrera Ing. en Sistemas de Informacion
 </p>
 
 * Para el backend se utilizo NODE.JS 16
-* Los datos se persisten en una base de datos en Atlas mongo
+* Los datos se persisten en una base de datos en Atlas Mongodb
 * Mediante el uso del ORM Monsoose
 
 # :blue_car: Documentación
