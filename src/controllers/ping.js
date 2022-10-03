@@ -1,4 +1,4 @@
-const responsePing = (req, res) => {
+const responsePing = async (req, res) => {
   res.json("Ok servidor funcionando");
 };
 
