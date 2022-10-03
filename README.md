@@ -19,9 +19,9 @@ Materia MCGA - Carrera Ing. en Sistemas de Informacion
 
 # :blue_car: Documentación
  
- Se documentó la API mediante el standar Swagger 3.0 con OpenAPI, también aprovechando el uso de Postman se publico una documentación utilizando esta metodoligía
+ Se documentó la API mediante Postman
  
- * [PostmanDoc](https://documenter.getpostman.com)
+ * [PostmanDoc](https://documenter.getpostman.com/view/11198688/2s83tGoWr6)
 
 # :red_car: Deploy
 
