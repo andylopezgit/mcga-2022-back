@@ -27,8 +27,23 @@ const getProductById = (req, res) => {
 };
 
 const deleteProductById = (req, res) => {
-  const id = req.params.id;
-  Products.deleteOne({ _id: id }).then().catch();
+  const { id } = req.params;
+  Products.findByIdAndUpdate({ _id: id }, { isDeleted: true }, { new: true })
+    .then((data) => {
+      if (data.length === 0)
+        return res.status(404).json({
+          msg: `Product not found by id ${id}`,
+        });
+      return res.json({
+        msg: "Product deleted",
+        data,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        msg: `Error: ${error}`,
+      });
+    });
 };
 
 const updateProduct = (req, res) => {
