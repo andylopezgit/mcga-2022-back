@@ -1,10 +1,11 @@
 # Andrés López ✔
+# Julian Gomez ✔
 
 Materia: MCGA - Carrera: Ingeniería. en Sistemas de Información 
 
 * :argentina: Andres Lopez [LinkedIn](https://www.linkedin.com/in/andresl%C3%B3pez/) - [GitHub](https://github.com/andylopezgit)
 
-# :articulated_lorry: Proyecto Parcial 1 - Backend
+# :articulated_lorry: Proyecto Final - Backend
 
 <a href="https://github.com/topics/node" target="_blank"><img align="center" alt="Made With NODE"  src="https://img.shields.io/badge/node-v16.17.0-LTS"></a>
 <a href="https://github.com/topics/mongoose" target="_blank"><img align="center" alt="Made With Mongoose"  src="https://img.shields.io/badge/mongoose-v6.6.3-orange"></a>
