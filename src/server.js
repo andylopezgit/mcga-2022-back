@@ -7,13 +7,15 @@ const productsRouter = require("../src/routes/index.js");
 
 const app = express();
 
-var corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200, // For legacy browser support
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-};
-
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://yoursite.com");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+app.use(cors());
 
 app.use(express.json());
 app.use(express.static("public"));
