@@ -4,6 +4,8 @@ const getUserById = (req, res) => {
   const user = req.body.user;
   const pass = req.body.pass;
 
+  console.log(user, pass);
+
   try {
     Users.findOne({ user: user }, function (err, user) {
       if (err) {
@@ -11,7 +13,7 @@ const getUserById = (req, res) => {
       }
 
       if (!user) {
-        res.send({ msg: "no hay usuarios" });
+        res.json({ msg: "no hay usuarios" });
       }
 
       if (user && user.pass === req.body.pass) {
