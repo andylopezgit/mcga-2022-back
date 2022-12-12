@@ -1,21 +1,28 @@
-const User = require("../models/user");
-const Products = require("../models/products");
+const Users = require("../models/user");
 
 const getUserById = (req, res) => {
-  const name = req.body.user;
+  const user = req.body.user;
   const pass = req.body.pass;
-  console.log(req.body);
 
-  User.find({ name: name, pass: pass }, function (err, user) {
-    if (err) {
-      res.send({ msg: "user not found", err, isLogged: false });
-    }
-    if (user.length > 0) {
-      res.json({ msg: "Login correct", user: user, isLogged: true });
-    } else {
-      res.json({ msg: "Login correct", user: user, isLogged: false });
-    }
-  });
+  try {
+    Users.findOne({ user: user }, function (err, user) {
+      if (err) {
+        res.json(err);
+      }
+
+      if (!user) {
+        res.send({ msg: "no hay usuarios" });
+      }
+
+      if (user && user.pass === req.body.pass) {
+        res.json({ msg: "Login correct", user: user, isLogged: true });
+      } else {
+        res.json({ msg: "wrong user or pass", isLogged: false });
+      }
+    });
+  } catch (e) {
+    res.send(e);
+  }
 };
 
 module.exports = {
