@@ -1,3 +1,10 @@
+
+const dotenv = require("dotenv").config();
+const mongoose = require("mongoose");
+const express = require("express");
+const router = require("./routes");
+const cors = require("cors");
+const productsRouter = require("../src/routes/index.js");
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
@@ -17,6 +24,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose
+    .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
     .connect(process.env.DATABASE_URL)
     .then(() => {
       app.listen({ port: 3000 });
