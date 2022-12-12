@@ -11,3 +11,5 @@ router.use("/api/products", checkToken, productsRoutes);
 router.use("/api/users", usersRoutes);
 
 module.exports = router;
+
+
