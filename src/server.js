@@ -4,27 +4,15 @@ const express = require("express");
 const router = require("./routes");
 const cors = require("cors");
 const productsRouter = require("../src/routes/index.js");
-
+app.use(cors());
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://mcga-final-22-lopez-gomez.vercel.app/"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 app.use(cors());
 
 app.use(express.json());
 app.use(express.static("public"));
 app.use(router);
+app.use(cors());
 app.use("/", productsRouter);
 
 main().catch((err) => console.log(err));
