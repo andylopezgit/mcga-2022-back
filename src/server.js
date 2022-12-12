@@ -4,7 +4,6 @@ const express = require("express");
 const router = require("./routes");
 const cors = require("cors");
 const productsRouter = require("../src/routes/index.js");
-app.use(cors());
 const app = express();
 
 const corsOptions = {
