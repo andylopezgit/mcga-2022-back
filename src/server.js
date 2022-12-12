@@ -1,13 +1,9 @@
-//const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const router = require("./routes");
 const cors = require("cors");
-
 const productsRouter = require("../src/routes/index.js");
-
-const url =
-  "mongodb+srv://andy:universidad@clustermcga2022.rhpftgp.mongodb.net/?retryWrites=true&w=majority";
 
 const app = express();
 app.use(cors());
@@ -20,7 +16,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose
-    .connect(url)
+    .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
     .then(() => {
       app.listen({ port: 3000 });
       console.log("🟢 DB Connected");
